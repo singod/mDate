@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link href="css/mDate.css" rel="stylesheet" />
+    <script src="js/mDate.js"></script>
+    <style>
+        .datepicker-cover{padding:15px;}
+        .dateinput{width:120px;height:30px;line-height:30px;border:1px solid #abaeb5}
+    </style>
+</head>
+<body>
+<div class="datepicker-cover">
+    <input type="text" class="dateinput" id="demostart"/>
+
+    <input type="text" class="dateinput" id="demoend"/>
+</div>
+
+
+<script>
+mDate({
+    'trigger': '#demostart', /*选择器，触发弹出插件*/
+    'type': 'date',/*date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择*/
+    'minDate':'1900-1-1',/*最小日期*/
+    'maxDate':new Date().getFullYear()+'-'+(new Date().getMonth()+1)+'-'+new Date().getDate(),/*最大日期*/
+    'onSubmit':function(){/*确认时触发事件*/
+        //var theSelectData=calendar.value;
+    },
+    'onClose':function(){/*取消时触发事件*/
+    }
+});
+mDate({
+    'trigger': '#demoend', /*选择器，触发弹出插件*/
+    'type': 'date',/*date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择*/
+    'minDate':'1900-1-1',/*最小日期*/
+    'maxDate':'2020-12-12',/*最大日期*/
+    'onSubmit':function(){/*确认时触发事件*/
+        //var theSelectData=calendar.value;
+    },
+    'onClose':function(){/*取消时触发事件*/
+    }
+});
+</script>
+
+</body>
+</html>

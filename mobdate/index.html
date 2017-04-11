@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>jeDate日期控件</title>
+<script type="text/javascript" src="js/jemdate.js"></script>
+<style>
+.bodys{ padding:50px 0 0 50px;}
+.datainp{ width:200px; height:30px; border:1px #ccc solid;}
+.datep{ margin-bottom:40px; line-height:24px; margin-right:15px;}
+</style>
+<link href="skin/jemdate.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bodys">
+<div style="width:100%; margin-bottom:50px; overflow:hidden;">
+
+<p class="datep"><input class="datainp" id="inpstart" type="text" placeholder="开始日期" value=""  readonly></p>
+<p class="datep"><input class="datainp" id="inpend" type="text" placeholder="结束日期"  readonly></p>
+<p class="datep">
+   <input class="datainp datep" id="start" type="text" placeholder=""  readonly>
+   <input class="datainp datep" id="end" type="text" placeholder=""  readonly>
+</p>
+<p class="datep"><input class="datainp" id="textymdhms" type="text" placeholder="YYYY-MM-DD hh:mm:ss" value=""  readonly></p>
+<p class="datep"><input class="datainp" id="texthms" type="text" placeholder="时分秒" value=""  readonly></p>
+<p class="datep"><input class="datainp" id="testym" type="text" placeholder="只显示年月"  readonly></p>
+
+<div class="discls" style="float:left;margin-right:5px;"></div>
+<div class="discls" style="float:left;margin-right:5px;"></div>
+</div>
+
+<script type="text/javascript">
+// YYYY-MM-DD hh:mm:ss
+jemobDate({
+	dateCell:"#inpstart",
+	//isinitVal:true,
+	isLimit:true,
+	format:"YYYY-MM-DD",
+	minDate:touchDate.now(0), 
+	//maxDate:touchDate.now(2)
+})
+jemobDate({
+	dateCell:"#inpend",
+	isinitVal:true,
+	isLimit:true,
+	format:"YYYY-MM-DD hh:mm",
+	minDate:touchDate.now(0), 
+	//maxDate:touchDate.now(0)
+})
+
+var start = {
+	dateCell:"#start",
+	isLimit:true,
+	format:"YYYY-MM-DD hh:mm",
+	minDate:touchDate.now(0), 
+	maxDate:'2030-06-16 23:59:59'	
+}
+var end = {
+	dateCell:"#end",
+	isLimit:true,
+	format:"YYYY-MM-DD hh:mm",
+	minDate:touchDate.now(0), 
+	maxDate:'2030-06-16 23:59:59'	
+}
+
+jemobDate(start);
+jemobDate(end);
+
+</script>
+
+</body>
+</html>
